@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập JS 21</title>
+  </head>
+  <body>
+    <script>
+      let tieptuc = true;
+
+      while (tieptuc) {
+        let a = parseInt(prompt("Moi nhap vao so a:"));
+
+        // Kiểm tra điều kiện a > 0
+        while (isNaN(a) || a <= 0) {
+          console.log("Vui long nhap so nguyen a > 0");
+          a = parseInt(prompt("Moi nhap vao so a:"));
+        }
+
+        // Kiểm tra số nguyên tố
+        let laNguyenTo = true;
+        if (a < 2) {
+          laNguyenTo = false;
+        } else {
+          for (let i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i === 0) {
+              laNguyenTo = false;
+              break;
+            }
+          }
+        }
+
+        if (laNguyenTo) {
+          console.log(a + " la so nguyen to");
+        } else {
+          console.log(a + " khong phai la so nguyen to");
+        }
+
+        // Hỏi tiếp tục
+        console.log("Ban co muon tiep tuc khong?");
+        console.log("bam n/N de thoat");
+        let chon = prompt("Ban co muon tiep tuc khong? (n/N de thoat):");
+        if (chon === "n" || chon === "N") {
+          tieptuc = false;
+        }
+      }
+    </script>
+  </body>
+</html>

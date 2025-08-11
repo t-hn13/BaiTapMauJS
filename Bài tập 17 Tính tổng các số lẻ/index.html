@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(
+        "Viết chương trình nhập vào số nguyên n \nTính tổng số lẻ từ 1 đến n và bỏ qua 3"
+      );
+
+      let n = Number(prompt("Vui lòng nhập vào số nguyên n:"));
+      while (isNaN(n) || n < 0 || !Number.isInteger) {
+        n = Number(prompt("Vui lòng nhập lại số nguyên n:"));
+      }
+      console.log(`Số nguyên n: ${n}`);
+      let tong = 0;
+      for (let i = 1; i <= n; i += 2) {
+        // Điều kiện bỏ qua nếu i = 3
+        if (i === 3) continue;
+        tong += i;
+        // Điều kiện khi n = 3 thì dừng chương trình
+        // if (i === 3) break;
+      }
+      console.log(`Tổng các số lẻ từ 1 đến ${n} và bỏ qua 3 là ${tong}`);
+    </script>
+  </body>
+</html>

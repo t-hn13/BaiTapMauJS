@@ -1,0 +1,55 @@
+<!-- Tính n! bằng function -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numN = Number(prompt("Vui lòng nhặp vào số n nguyên > 0"));
+      while (isNaN(numN) || !Number.isInteger(numN) || numN <= 0) {
+        numN = Number(
+          prompt("Bạn đã nhập sai số, vui lòng nhặp vào số n nguyên > 0")
+        );
+      }
+      alert(`Số ${numN} là số hợp lệ`);
+      // Viết hàm tính giai thừa
+      function tinhGiaiThua(n) {
+        // numN sẽ truyền giá trị vào n của hàm
+        let giaiThua = 1;
+        // Dòng vòng lặp for để tính giai thừa
+        // VD: 3! = 1 * 2 * 3 nên i phải băt đầu từ 1
+        for (let i = 1; i <= n; i++) {
+          giaiThua *= i;
+        }
+        // Trả về kết quả của tính giai thừa
+        return giaiThua;
+      }
+      function tinhGiaiThuaWhile(n) {
+        let gt = 1;
+        let i = 1;
+        while (i <= n) {
+          gt *= i;
+          i++;
+        }
+        return gt;
+      }
+      // Gọi hàm tính giai thừa
+      alert(`Với vòng lặp for ${numN}! = ${tinhGiaiThua(numN)}`);
+      alert(`Với vòng lặp while ${numN}! = ${tinhGiaiThuaWhile(numN)}`);
+      // Giá trị của numN sẽ được gán vào đối số n của hàm tinhGiaiThua
+      ///////////////////////////////////////////////////////////////////
+      // DÙNG HÀM (FUNCTION) ĐỂ CÓ THỂ TÁI SỬ DỤNG THAY VÌ MÕI LẦN TÍNH GIAI THỪA THÌ CODE LẠI CHỨC NĂNG
+      alert(`Với vòng lặp for ${1}! = ${tinhGiaiThua(1)}`);
+      alert(`Với vòng lặp while ${2}! = ${tinhGiaiThuaWhile(2)}`);
+      alert(`Với vòng lặp for ${3}! = ${tinhGiaiThua(3)}`);
+      alert(`Với vòng lặp while ${5}! = ${tinhGiaiThuaWhile(5)}`);
+      alert(`Với vòng lặp for ${6}! = ${tinhGiaiThua(6)}`);
+      alert(`Với vòng lặp while ${7}! = ${tinhGiaiThuaWhile(7)}`);
+      alert(`Với vòng lặp for ${8}! = ${tinhGiaiThua(8)}`);
+      alert(`Với vòng lặp while ${9}! = ${tinhGiaiThuaWhile(9)}`);
+    </script>
+  </body>
+</html>

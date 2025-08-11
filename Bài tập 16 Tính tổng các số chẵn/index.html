@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("Tính tổng chẵn, lẻ");
+      let tong = 0;
+      let a = Number(prompt("Vui lòng nhập số nguyên a:"));
+      // Kiểm tra điều kiện
+      while (isNaN(a) || !Number.isInteger(a) || a < 0) {
+        a = Number(prompt("Vui lòng lại số nguyên a:"));
+      }
+      // Kiểm tra số chẵn
+      // Tính tổng chẵn từ 0 tới a
+      if (a % 2 === 0) {
+        for (let i = 0; i <= a; i += 2) {
+          tong += i;
+        }
+        console.log(`Tổng từ 0 đến ${a} là ${tong}`);
+      } else console.log("Tôi không tính tổng lẻ, Bye bye");
+    </script>
+  </body>
+</html>
